@@ -1,0 +1,57 @@
+{
+	"devToken": "NzQ2Mzk2ODQ0OTQ2NDg5NTA0.Xz_uOw.2RHhr2EFR5li_PZdtpY1bz_uCdQ",
+	"sentryDsn": "",
+	"bot": {
+		"type": "regular",
+		"ids": {
+			"regular": "",
+			"pro": ""
+		},
+		"links": {
+			"add": "https://discord.com/api/oauth2/authorize?client_id=746396844946489504&permissions=8&scope=bot",
+			"support": "https://discord.gg/x5gmedV",
+			"website": "",
+			"patreon": ""
+		},
+		"dm": {
+			"guild": "746633567915737118",
+			"channel": "748975058629820447"
+		},
+		"apiAuth": {
+			"username": "",
+			"password": ""
+		},
+		"dblToken": null,
+		"music": {
+			"pollyUrl": ""
+		}
+	},
+	"rabbitmq": {
+		"hostname": "localhost",
+		"username": "invitetracker",
+		"password": "invitetracker_",
+		"prefix": "it"
+	},
+	"databases": [
+		{
+			"host": "127.0.0.1",
+			"port": 3306,
+			"user": "invitetracker",
+			"password": "invitetracker_",
+			"range": {
+				"from": 0,
+				"to": 0
+			}
+		},
+		{
+			"host": "127.0.0.1",
+			"port": 3306,
+			"user": "invitetracker",
+			"password": "invitetracker_",
+			"range": {
+				"from": 1,
+				"to": 1
+			}
+		}
+	]
+}

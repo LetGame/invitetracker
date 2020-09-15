@@ -1,0 +1,8 @@
+{
+	"apps": [{
+		"name": "bot",
+		"script": "bin/bot.js",
+		"args": "NzQ2Mzk2ODQ0OTQ2NDg5NTA0.Xz_uOw.2RHhr2EFR5li_PZdtpY1bz_uCdQ 1 8",
+		"log_date_format": "YYYY-MM-DD HH:mm:ss.SSS"
+	}]
+}

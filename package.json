@@ -1,0 +1,83 @@
+{
+	"name": "discord-invite-tracker",
+	"version": "9.8.0",
+	"description": "",
+	"main": "./bin/bot.js",
+	"scripts": {
+		"start": "cross-env NODE_ENV=dev node scripts/dev-run.js",
+		"debug": "cross-env NODE_ENV=dev node scripts/dev-run.js debug",
+		"build": "tsc",
+		"lint": "tslint --project tsconfig.json --config tslint.json --format stylish",
+		"format": "prettier --write \"src/**/*.ts\" \"docs/**/*.md\" \"README.md\" \"CHANGELOG.md\"",
+		"release": "npm run build && npm run docs && npm run format && standard-version",
+		"i18n": "node scripts/check-i18n.js",
+		"nxv": "node ./scripts/npm-exact-versions.js",
+		"docs": "node scripts/generate-docs.js"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run nxv && pretty-quick --staged"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SideProjectGuys/invite-manager-bot.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/SideProjectGuys/invite-manager-bot/issues"
+	},
+	"homepage": "https://docs.invitemanager.co/",
+	"dependencies": {
+		"@sentry/node": "5.15.5",
+		"amqplib": "0.5.6",
+		"axios": "0.19.2",
+		"bufferutil": "4.0.1",
+		"canvas": "2.6.1",
+		"chalk": "4.0.0",
+		"chart.js": "2.9.3",
+		"chartjs-node-canvas": "3.0.6",
+		"chartjs-plugin-datalabels": "0.7.0",
+		"eris": "github:abalabahaha/eris#dev",
+		"eris-lavalink": "github:SideProjectGuys/eris-lavalink#8e3156a968033c1f037b5424dd46aacb8af76436",
+		"erlpack": "github:abalabahaha/erlpack",
+		"eventemitter3": "4.0.4",
+		"i18n": "0.9.1",
+		"iheart": "3.1.1",
+		"moment": "2.26.0",
+		"mysql2": "2.1.0",
+		"reflect-metadata": "0.1.13",
+		"uws": "10.148.1",
+		"xmldoc": "1.1.2",
+		"ytdl-core": "2.1.4",
+		"zlib-sync": "0.1.6"
+	},
+	"devDependencies": {
+		"@sentry/cli": "1.53.0",
+		"@types/amqplib": "0.5.13",
+		"@types/chart.js": "2.9.21",
+		"@types/i18n": "0.8.6",
+		"@types/mysql2": "github:types/mysql2",
+		"@types/node": "14.0.5",
+		"@types/xmldoc": "1.1.4",
+		"cross-env": "^7.0.2",
+		"docsify": "4.11.3",
+		"docsify-cli": "4.4.0",
+		"fs-extra": "9.0.0",
+		"husky": "4.2.5",
+		"prettier": "2.0.5",
+		"pretty-quick": "2.0.1",
+		"standard-version": "8.0.0",
+		"tslint": "6.1.2",
+		"tslint-config-prettier": "1.18.0",
+		"typescript": "3.9.3",
+		"typestrict": "1.0.2"
+	},
+	"engines": {
+		"node": ">=10.16.3 <12"
+	},
+	"modulePaths": [
+		"node-modules"
+	]
+}

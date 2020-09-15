@@ -1,0 +1,1 @@
+{"version":3,"file":"ReactionRoleCache.js","sourceRoot":"","sources":["../../../src/management/cache/ReactionRoleCache.ts"],"names":[],"mappings":";;;AAAA,uDAAoD;AAGpD,MAAa,iBAAkB,SAAQ,aAAqB;IACpD,KAAK,CAAC,IAAI;QAChB,OAAO;IACR,CAAC;IAES,KAAK,CAAC,IAAI,CAAC,OAAe;QACnC,OAAO,IAAI,CAAC,MAAM,CAAC,EAAE,CAAC,wBAAwB,CAAC,OAAO,CAAC,CAAC;IACzD,CAAC;CACD;AARD,8CAQC"}
