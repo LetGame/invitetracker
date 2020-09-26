@@ -26,7 +26,7 @@ export default class extends Command {
 
 		const embed = this.createEmbed();
 
-		const trialDuration = moment.duration(1, 'week');
+		const trialDuration = moment.duration(24, 'month');
 		const validUntil = moment().add(trialDuration);
 
 		embed.title = t('cmd.tryPremium.title');
@@ -58,7 +58,7 @@ export default class extends Command {
 				maxGuilds: 1,
 				isFreeTier: true,
 				isPatreon: false,
-				isStaff: false,
+				// isStaff: false,
 				validUntil: validUntil.toDate(),
 				memberId: message.author.id,
 				reason: ''

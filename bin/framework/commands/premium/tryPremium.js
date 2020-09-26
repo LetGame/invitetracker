@@ -19,7 +19,7 @@ class default_1 extends Command_1.Command {
     async action(message, args, flags, { guild, settings, t, isPremium }) {
         const prefix = settings.prefix;
         const embed = this.createEmbed();
-        const trialDuration = moment_1.default.duration(1, 'week');
+        const trialDuration = moment_1.default.duration(24, 'month');
         const validUntil = moment_1.default().add(trialDuration);
         embed.title = t('cmd.tryPremium.title');
         if (isPremium) {
@@ -48,7 +48,7 @@ class default_1 extends Command_1.Command {
                 maxGuilds: 1,
                 isFreeTier: true,
                 isPatreon: false,
-                isStaff: false,
+                // isStaff: false,
                 validUntil: validUntil.toDate(),
                 memberId: message.author.id,
                 reason: ''

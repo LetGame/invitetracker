@@ -29,7 +29,7 @@ class default_1 extends Command_1.Command {
     }
     async action(message, args, flags, context) {
         const embed = this.createEmbed({
-            title: 'InviteManager',
+            title: 'InviteTracker',
             description: 'Loading...'
         });
         // Ask users to use the webpanel on the regular bot
@@ -86,7 +86,7 @@ class default_1 extends Command_1.Command {
         const basePath = path.map((p) => `${p}.`).join('');
         let page = 0;
         do {
-            let title = 'InviteManager';
+            let title = 'InviteTracker';
             for (let i = 0; i < path.length; i++) {
                 title += ' - ' + t(`settings.groups.${path.slice(0, i + 1).join('.')}.title`);
             }

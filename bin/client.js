@@ -37,6 +37,7 @@ const MusicCache_1 = require("./music/cache/MusicCache");
 const MusicService_1 = require("./music/services/MusicService");
 const settings_1 = require("./settings");
 const types_1 = require("./types");
+var isSecondStatus = false;
 i18n_1.default.configure({
     locales: ['cs', 'de', 'en', 'es', 'fr', 'it', 'ja', 'nl', 'pl', 'pt', 'pt_BR', 'ro', 'ru', 'tr'],
     defaultLocale: 'en',
@@ -192,7 +193,7 @@ class IMClient extends eris_1.Client {
                 const dmChannel = await this.getDMChannel(guild.ownerID);
                 await dmChannel
                     .createMessage(`Hi! Thanks for inviting me to your server \`${guild.name}\`!\n\n` +
-                    'It looks like this guild was banned from using the InviteManager bot.\n' +
+                    'It looks like this guild was banned from using the InviteTracker bot.\n' +
                     'If you believe this was a mistake please contact staff on our support server.\n\n' +
                     `${this.config.bot.links.support}\n\n` +
                     'I will be leaving your server now, thanks for having me!')
@@ -223,9 +224,9 @@ class IMClient extends eris_1.Client {
                             await dmChannel
                                 .createMessage('Hi!' +
                                 `Thanks for inviting me to your server \`${guild.name}\`!\n\n` +
-                                'I am the pro version of InviteManager, and only available to people ' +
+                                'I am the pro version of InviteTracker, and only available to people ' +
                                 'that support me on Patreon with the pro tier.\n\n' +
-                                'To purchase the pro tier visit https://www.patreon.com/invitemanager\n\n' +
+                                'To purchase the pro tier visit `no premium yet`\n\n' +
                                 'If you purchased premium run `!premium check` and then `!premium activate` in the server\n\n' +
                                 'I will be leaving your server soon, thanks for having me!')
                                 .catch(() => undefined);
@@ -245,7 +246,7 @@ class IMClient extends eris_1.Client {
             }
         });
         await this.setActivity();
-        this.activityInterval = setInterval(() => this.setActivity(), 1 * 60 * 1000);
+        this.activityInterval = setInterval(() => this.setActivity(), 30 * 1000);
     }
     serviceStartupDone(service) {
         this.startingServices = this.startingServices.filter((s) => s !== service);
@@ -279,7 +280,7 @@ class IMClient extends eris_1.Client {
         else if (dbGuild.banReason !== null) {
             await channel
                 .createMessage(`Hi! Thanks for inviting me to your server \`${guild.name}\`!\n\n` +
-                'It looks like this guild was banned from using the InviteManager bot.\n' +
+                'It looks like this guild was banned from using the InviteTracker bot.\n' +
                 'If you believe this was a mistake please contact staff on our support server.\n\n' +
                 `${this.config.bot.links.support}\n\n` +
                 'I will be leaving your server soon, thanks for having me!')
@@ -300,9 +301,9 @@ class IMClient extends eris_1.Client {
             if (!premium) {
                 await channel
                     .createMessage(`Hi! Thanks for inviting me to your server \`${guild.name}\`!\n\n` +
-                    'I am the pro version of InviteManager, and only available to people ' +
+                    'I am the pro version of InviteTracker, and only available to people ' +
                     'that support me on Patreon with the pro tier.\n\n' +
-                    'To purchase the pro tier visit https://www.patreon.com/invitemanager\n\n' +
+                    'To purchase the pro tier visit `no premium avalible yet`\n\n' +
                     'If you purchased premium run `!premium check` and then `!premium activate` in the server\n\n' +
                     'I will be leaving your server soon, thanks for having me!')
                     .catch(() => undefined);
@@ -452,13 +453,32 @@ class IMClient extends eris_1.Client {
     // 	return xmlHttp.responseText;
     // }
     async setActivity() {
-        const status = 'online';
-        this.editStatus(status);
-        const type = 3;
-        const name = `your invites!`;
-        const url = 'https://letgame.a.sumy.ua';
+        delete require.cache[require.resolve('../status.js')];
+        const activity = require('../status.js');
+        const status = activity.status;
+        const url = 'https://invitetracker.a.sumy.ua';
+        var type = activity.type;
+        var name = activity.name;
+        if (activity.secondStatus === false) {
+            type = activity.type;
+            name = activity.name;
+            isSecondStatus = true;
+        }
+        else {
+            type = activity.type2;
+            name = activity.name2;
+            isSecondStatus = false;
+        }
+        if (activity.showGuilds === true) {
+            name = name.concat(' | ' + this.guilds.size + ' guilds - ' + this.users.size + ' users.');
+        }
         this.editStatus(status, { name, type, url });
     }
+    // console.log(chalk.green(" --- Activity update --- "))
+    // console.log(chalk.green(" Status: ") + chalk.blue(status));
+    // console.log(chalk.green(" Type: ") +  + chalk.blue(type));
+    // console.log(chalk.green(" Name: ") +  + chalk.blue(name));
+    // console.log(chalk.green(" ----------------------- "))
     async onConnect() {
         console.error('DISCORD CONNECT');
         this.gatewayConnected = true;

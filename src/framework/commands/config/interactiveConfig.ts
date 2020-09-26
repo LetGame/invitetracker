@@ -37,7 +37,7 @@ export default class extends Command {
 
 	public async action(message: Message, args: any[], flags: {}, context: Context): Promise<any> {
 		const embed = this.createEmbed({
-			title: 'InviteManager',
+			title: 'InviteTracker',
 			description: 'Loading...'
 		});
 
@@ -106,7 +106,7 @@ export default class extends Command {
 		let page = 0;
 
 		do {
-			let title = 'InviteManager';
+			let title = 'InviteTracker';
 			for (let i = 0; i < path.length; i++) {
 				title += ' - ' + t(`settings.groups.${path.slice(0, i + 1).join('.')}.title`);
 			}
