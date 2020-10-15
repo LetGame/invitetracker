@@ -1,4 +1,4 @@
-# InviteManager Docs
+# InviteTracker Docs
 
 - [English](/en/README.md)
 - [العربية](/ar/README.md)
