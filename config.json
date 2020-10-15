@@ -1,5 +1,5 @@
 {
-	"devToken": "NzQ2Mzk2ODQ0OTQ2NDg5NTA0.Xz_uOw.2RHhr2EFR5li_PZdtpY1bz_uCdQ",
+	"devToken": "",
 	"sentryDsn": "",
 	"bot": {
 		"type": "regular",
@@ -10,12 +10,12 @@
 		"links": {
 			"add": "https://discord.com/api/oauth2/authorize?client_id=746396844946489504&permissions=8&scope=bot",
 			"support": "https://discord.gg/x5gmedV",
-			"website": "",
+			"website": "https://invitetracker.a.sumy.ua",
 			"patreon": ""
 		},
 		"dm": {
-			"guild": "746633567915737118",
-			"channel": "748975058629820447"
+			"guild": "",
+			"channel": ""
 		},
 		"apiAuth": {
 			"username": "",
@@ -27,27 +27,27 @@
 		}
 	},
 	"rabbitmq": {
-		"hostname": "localhost",
-		"username": "invitetracker",
-		"password": "invitetracker_",
-		"prefix": "it"
+		"hostname": "",
+		"username": "",
+		"password": "",
+		"prefix": ""
 	},
 	"databases": [
 		{
-			"host": "127.0.0.1",
-			"port": 3306,
-			"user": "invitetracker",
-			"password": "invitetracker_",
+			"host": "",
+			"port": ,
+			"user": "",
+			"password": "",
 			"range": {
 				"from": 0,
 				"to": 0
 			}
 		},
 		{
-			"host": "127.0.0.1",
-			"port": 3306,
-			"user": "invitetracker",
-			"password": "invitetracker_",
+			"host": "",
+			"port": ,
+			"user": "",
+			"password": "",
 			"range": {
 				"from": 1,
 				"to": 1
