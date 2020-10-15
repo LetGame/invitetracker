@@ -31,11 +31,11 @@ This arguments expects a Discord Invite Code.
 
 This arguments expects a Discord User. You can use any of the following methods to provide a user:
 
-- Mention the user: `@Valandur`
+- Mention the user: `@LetGame`
 - Use their ID: `102785693046026240`
-- Use their name: `Valandur`
-- Use their name and discriminator: `Valandur#3581`
-- Use quotes if their name has a space: `"Valandur with a space"`
+- Use their name: `LetGame`
+- Use their name and discriminator: `LetGame#2454`
+- Use quotes if their name has a space: `"LetGame Dev"`
 
 ### Role
 

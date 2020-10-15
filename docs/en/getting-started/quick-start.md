@@ -2,12 +2,8 @@
 
 ## Setup
 
-start.quick.setup.description
+To make the bot work propertly, you have to configure some things.
 
-### 1. start.quick.setup.first.title
+### Join/leave messages
 
-start.quick.setup.first.description
-
-### 2. start.quick.setup.second.title
-
-start.quick.setup.second.description
+Use `!config joinMessage` and `!config leaveMessage` to set the messages. Then enter `!config joinMessageChannel` and `!config leaveMessageChannel` to set channels messages sent to.
