@@ -137,14 +137,6 @@ This argument expects a duration. The following duration types are supported:
 | [setup](#setup)     | Help with setting up the bot and checking for problems (e.g. missing permissions) | !setup          |
 | [support](#support) | Get an invite link to our support server.                                         | !support        |
 
-### Premium
-
-| Command                   | Description                                                               | Usage             |
-| ------------------------- | ------------------------------------------------------------------------- | ----------------- |
-| [export](#export)         | Export data of InviteManager to a csv sheet.                              | !export \<type\>  |
-| [premium](#premium)       | Info about premium version of InviteManager.                              | !premium [action] |
-| [tryPremium](#tryPremium) | Try the premium version of InviteManager for free for a limited duration. | !tryPremium       |
-
 ### Moderation
 
 | Command                               | Description                                                                                                                                   | Usage                                                            |
@@ -1438,49 +1430,6 @@ Shows the current prefix of the bot.
 !prefix
 ```
 
-<a name='premium'></a>
-
----
-
-## !premium
-
-Info about premium version of InviteManager.
-
-### Usage
-
-```text
-!premium [action]
-```
-
-### Aliases
-
-- `!patreon`
-- `!donate`
-
-### Arguments
-
-| Argument | Type          | Required | Description                                                                                                                         | Details                                                            |
-| -------- | ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| action   | [Enum](#Enum) | No       | The action to perform. None for premium info. `check` to check your premium status. `activate` to use your premium for this server. | Use one of the following values: `Activate`, `Check`, `Deactivate` |
-
-### Examples
-
-```text
-!premium
-```
-
-```text
-!premium check
-```
-
-```text
-!premium activate
-```
-
-```text
-!premium deactivate
-```
-
 <a name='punishmentConfig'></a>
 
 ---
@@ -2075,31 +2024,6 @@ Get an invite link to our support server.
 
 ```text
 !support
-```
-
-<a name='tryPremium'></a>
-
----
-
-## !tryPremium
-
-Try the premium version of InviteManager for free for a limited duration.
-
-### Usage
-
-```text
-!tryPremium
-```
-
-### Aliases
-
-- `!try`
-- `!try-premium`
-
-### Examples
-
-```text
-!tryPremium
 ```
 
 <a name='unban'></a>
